@@ -12,5 +12,7 @@
 </head>
 <body>
     <h2>Home</h2>
+
+    <div>go to <a href="/members">members</a></div>
 </body>
 </html>
