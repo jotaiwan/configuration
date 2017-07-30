@@ -2,6 +2,8 @@ package com.springmvc.controller;
 
 import com.springmvc.data.entity.Employee;
 import com.springmvc.service.EmployeeService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,7 @@ import java.util.List;
  */
 @Controller
 public class EmployeeController {
+    private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
     @Autowired
     EmployeeService employeeService;
 
@@ -22,6 +25,8 @@ public class EmployeeController {
         List<Employee> employees = employeeService.findAllEmployees();
         model.addAttribute("employees", employees);
         model.addAttribute("total", employees.size());
+
+        logger.warn("Total employees: {}", employees.size());
         return "employees";
     }
 }
