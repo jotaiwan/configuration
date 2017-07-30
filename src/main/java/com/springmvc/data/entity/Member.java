@@ -5,7 +5,6 @@ import org.joda.time.LocalDate;
 
 import javax.persistence.*;
 
-
 /**
  * Created by jotaiwan on 22/07/2017.
  */
