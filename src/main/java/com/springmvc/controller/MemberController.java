@@ -21,6 +21,7 @@ public class MemberController {
     public Model members(Model model) {
         List<Member> allMembers = memberService.findAll();
         model.addAttribute("members", allMembers);
+        model.addAttribute("total", allMembers.size());
         return model;
     }
 }

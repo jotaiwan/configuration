@@ -15,5 +15,6 @@
 
     <div>go to <a href="/members">members</a></div>
     <div>go to <a href="/loginManager">login manager</a></div>
+    <div>go to <a href="/employees">employees</a></div>
 </body>
 </html>
