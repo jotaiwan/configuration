@@ -15,10 +15,20 @@
 </head>
 <body>
     <h2>Login</h2>
-    <div>
-        <c:forEach items="${logins}" var="login">
-            <div><a href="/login/${login.id}/edit">${login.username}</a></div>
-        </c:forEach>
-    </div>
+    <div><a href="/login/add">add</a></div>
+    <c:choose>
+        <c:when test="${mode == 'add'}">
+            <div>add the new login here..</div>
+        </c:when>
+        <c:when test="${mode == 'edit'}">
+            <div>edit ${login.username} here..</div>
+        </c:when>
+        <c:otherwise>
+            <c:forEach items="${logins}" var="login">
+                <div><a href="/login/${login.id}/edit">${login.username}</a></div>
+            </c:forEach>
+        </c:otherwise>
+    </c:choose>
+
 </body>
 </html>

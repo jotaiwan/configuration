@@ -2,6 +2,7 @@ package com.springmvc.service;
 
 import com.springmvc.Repository.LoginRepository;
 import com.springmvc.data.dto.LoginDto;
+import com.springmvc.data.entity.Login;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,5 +22,10 @@ public class LoginService {
     public List<LoginDto> findAll() {
         return loginRepository.findAll().stream()
                 .map(l -> new LoginDto(l.getId(), l.getUsername())).collect(Collectors.toList());
+    }
+
+    public LoginDto findById(int id) {
+        Login login = loginRepository.findById(id);
+        return new LoginDto(login.getId(), login.getUsername());
     }
 }
