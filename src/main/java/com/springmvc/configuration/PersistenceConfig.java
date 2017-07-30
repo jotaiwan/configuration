@@ -28,7 +28,7 @@ public class PersistenceConfig {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] { "com.joseph.data.entity" });
+        sessionFactory.setPackagesToScan(new String[] { "com.springmvc.data.entity" });
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
     }

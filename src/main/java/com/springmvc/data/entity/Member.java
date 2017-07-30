@@ -5,12 +5,11 @@ import org.joda.time.LocalDate;
 
 import javax.persistence.*;
 
-
 /**
  * Created by jotaiwan on 22/07/2017.
  */
 @Entity
-@Table(name="Member")
+@Table(name="member")
 public class Member {
 
     @Id
@@ -34,8 +33,8 @@ public class Member {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + id;
-        result = prime * result + ((firstname == null) ? 0 : firstname.hashCode());
+        result = prime * result + getId();
+        result = prime * result + ((getFirstname() == null) ? 0 : getFirstname().hashCode());
         return result;
     }
 
@@ -48,15 +47,54 @@ public class Member {
         if (!(obj instanceof Member))
             return false;
         Member other = (Member) obj;
-        if (id != other.id)
+        if (getId() != other.getId())
             return false;
         return true;
     }
 
     @Override
     public String toString() {
-        return "Member [id=" + id + ", name=" + firstname + " " + lastname + ", dob=" + dob + "]";
+        return "Member [id=" + getId() + ", name=" + getFirstname() + " " + getLastname() + ", dob=" + getDob() + "]";
     }
 
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
 }
